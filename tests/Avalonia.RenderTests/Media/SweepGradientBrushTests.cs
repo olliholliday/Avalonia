@@ -9,14 +9,14 @@ namespace Avalonia.Skia.RenderTests
 namespace Avalonia.Direct2D1.RenderTests.Media
 #endif
 {
-    public class SweepGradientBrushTests : TestBase
+    public class ConicGradientBrushTests : TestBase
     {
-        public SweepGradientBrushTests() : base(@"Media\SweepGradientBrush")
+        public ConicGradientBrushTests() : base(@"Media\ConicGradientBrush")
         {
         }
 
         [Fact]
-        public async Task SweepGradientBrush_RedBlue()
+        public async Task ConicGradientBrush_RedBlue()
         {
             Decorator target = new Decorator
             {
@@ -25,7 +25,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
@@ -41,7 +41,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
         }
 
         [Fact]
-        public async Task SweepGradientBrush_RedBlue_Rotation()
+        public async Task ConicGradientBrush_RedBlue_Rotation()
         {
             Decorator target = new Decorator
             {
@@ -50,14 +50,14 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
                             new GradientStop { Color = Colors.Red, Offset = 0 },
                             new GradientStop { Color = Colors.Blue, Offset = 1 }
                         },
-                        Angle = -90
+                        Angle = 90
                     }
                 }
             };
@@ -67,7 +67,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
         }
 
         [Fact]
-        public async Task SweepGradientBrush_RedBlue_Center()
+        public async Task ConicGradientBrush_RedBlue_Center()
         {
             Decorator target = new Decorator
             {
@@ -76,7 +76,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
@@ -93,7 +93,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
         }
 
         [Fact]
-        public async Task SweepGradientBrush_RedBlue_Center_and_Rotation()
+        public async Task ConicGradientBrush_RedBlue_Center_and_Rotation()
         {
             Decorator target = new Decorator
             {
@@ -102,7 +102,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
@@ -110,7 +110,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                             new GradientStop { Color = Colors.Blue, Offset = 1 }
                         },
                         Center = new RelativePoint(0.25, 0.25, RelativeUnit.Relative),
-                        Angle = -90
+                        Angle = 90
                     }
                 }
             };
@@ -120,7 +120,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
         }
 
         [Fact]
-        public async Task SweepGradientBrush_RedBlue_SoftEdge()
+        public async Task ConicGradientBrush_RedBlue_SoftEdge()
         {
             Decorator target = new Decorator
             {
@@ -129,7 +129,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
@@ -146,7 +146,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
         }
 
         [Fact]
-        public async Task SweepGradientBrush_Umbrella()
+        public async Task ConicGradientBrush_Umbrella()
         {
             Decorator target = new Decorator
             {
@@ -155,7 +155,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                 Height = 200,
                 Child = new Border
                 {
-                    Background = new SweepGradientBrush
+                    Background = new ConicGradientBrush
                     {
                         GradientStops =
                         {
@@ -166,8 +166,7 @@ namespace Avalonia.Direct2D1.RenderTests.Media
                             new GradientStop { Color = Colors.Blue, Offset = 0.6667 },
                             new GradientStop { Color = Colors.Magenta, Offset = 0.8333 },
                             new GradientStop { Color = Colors.Red, Offset = 1 },
-                        },
-                        Angle = -90
+                        }
                     }
                 }
             };

@@ -1,9 +1,9 @@
 ﻿namespace Avalonia.Media
 {
     /// <summary>
-    /// Paints an area with a sweep gradient.
+    /// Paints an area with a conic gradient.
     /// </summary>
-    public interface ISweepGradientBrush : IGradientBrush
+    public interface IConicGradientBrush : IGradientBrush
     {
         /// <summary>
         /// Gets the center point for the gradient.
@@ -12,7 +12,7 @@
 
         /// <summary>
         /// Gets the starting angle for the gradient in degrees, measured from
-        /// the point to the right of the center point.
+        /// the point above the center point.
         /// </summary>
         double Angle { get; }
     }

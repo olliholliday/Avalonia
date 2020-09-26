@@ -5,7 +5,7 @@ namespace Avalonia.Media
     /// <summary>
     /// Paints an area with a swept circular gradient.
     /// </summary>
-    public sealed class SweepGradientBrush : GradientBrush, ISweepGradientBrush
+    public sealed class ConicGradientBrush : GradientBrush, IConicGradientBrush
     {
         /// <summary>
         /// Defines the <see cref="Center"/> property.
@@ -23,9 +23,9 @@ namespace Avalonia.Media
                 nameof(Angle),
                 0);
         
-        static SweepGradientBrush()
+        static ConicGradientBrush()
         {
-            AffectsRender<SweepGradientBrush>(CenterProperty, AngleProperty);
+            AffectsRender<ConicGradientBrush>(CenterProperty, AngleProperty);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Avalonia.Media
         }
 
         /// <summary>
-        /// Gets or sets the angle of the start and end of the sweep, measured from right of the center point.
+        /// Gets or sets the angle of the start and end of the sweep, measured from above the center point.
         /// </summary>
         public double Angle
         {
@@ -49,7 +49,7 @@ namespace Avalonia.Media
         /// <inheritdoc/>
         public override IBrush ToImmutable()
         {
-            return new ImmutableSweepGradientBrush(this);
+            return new ImmutableConicGradientBrush(this);
         }
     }
 }
