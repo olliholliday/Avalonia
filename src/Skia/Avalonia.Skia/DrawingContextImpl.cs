@@ -595,6 +595,22 @@ namespace Avalonia.Skia
 
                     break;
                 }
+                case ISweepGradientBrush sweepGradient:
+                {
+                    var center = sweepGradient.Center.ToPixels(targetSize).ToSKPoint();
+
+                    var rotation = (sweepGradient.Angle != 0) 
+                        ? SKMatrix.CreateRotationDegrees((float)(sweepGradient.Angle), center.X, center.Y)
+                        : SKMatrix.Identity;
+
+                    using (var shader = 
+                        SKShader.CreateSweepGradient(center, stopColors, stopOffsets, rotation))
+                    {
+                        paintWrapper.Paint.Shader = shader;
+                    }
+
+                    break;
+                }
             }
         }
 
